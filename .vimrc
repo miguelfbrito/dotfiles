@@ -20,9 +20,13 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
 inoremap jk <esc>
 
-
+nnoremap <C-left> :vertical resize -5<cr>
+nnoremap <C-right> :vertical resize +5<cr>
+nnoremap <C-up> :resize -5<cr>
+nnoremap <C-down> :resize +5<cr>
 
 
 
