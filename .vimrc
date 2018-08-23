@@ -1,5 +1,8 @@
+inoremap jk <esc>
+nnoremap J <C-d>
+nnoremap K <C-u>
+
 set number
-set relativenumber
 set autoindent
 set tabstop=4
 set softtabstop=4
@@ -21,25 +24,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-inoremap jk <esc>
+
 
 nnoremap <C-left> :vertical resize -5<cr>
 nnoremap <C-right> :vertical resize +5<cr>
 nnoremap <C-up> :resize -5<cr>
 nnoremap <C-down> :resize +5<cr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
