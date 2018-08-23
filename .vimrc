@@ -2,6 +2,11 @@ inoremap jk <esc>
 nnoremap J <C-d>
 nnoremap K <C-u>
 
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
 set number
 set autoindent
 set tabstop=4
@@ -17,14 +22,6 @@ set smartindent
 set matchpairs+=<:>
 
 syntax on
-colorscheme monokai
-
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-
 
 nnoremap <C-left> :vertical resize -5<cr>
 nnoremap <C-right> :vertical resize +5<cr>
