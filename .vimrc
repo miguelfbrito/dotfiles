@@ -1,6 +1,8 @@
 inoremap jk <esc>
-nnoremap J <C-d>
-nnoremap K <C-u>
+nnoremap J <C-d>          " moves down a page
+nnoremap K <C-u>          " moves up a page
+nnoremap H gT             " jumps to previous tab
+nnoremap L gt             " jumps to next tab
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
