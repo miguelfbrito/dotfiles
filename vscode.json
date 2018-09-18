@@ -1,0 +1,62 @@
+{
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                "<C-d>"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "<C-u>"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "g",
+                "T"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "g",
+                "t"
+            ]
+        }
+    ],
+    "vim.useCtrlKeys": false,
+    "editor.fontSize": 16,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "window.zoomLevel": -1,
+    "workbench.statusBar.feedback.visible": false,
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Solarized Dark",
+    "window.menuBarVisibility": "toggle",
+    "workbench.sideBar.location": "right",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"
+}
