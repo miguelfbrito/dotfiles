@@ -1,4 +1,6 @@
-inoremap jk <esc>
+set nocompatible
+
+inoremap jk <Esc>
 nnoremap J <C-d>
 nnoremap K <C-u>
 nnoremap H gT
@@ -21,7 +23,7 @@ set smartindent
 set clipboard=unnamed
 
 set matchpairs+=<:>
-
+hi MatchParen ctermfg=red ctermbg=black  guifg=red guibg=black 
 syntax on
 
 nnoremap <C-left> :vertical resize +5<cr>
@@ -29,13 +31,24 @@ nnoremap <C-right> :vertical resize -5<cr>
 nnoremap <C-up> :resize -5<cr>
 nnoremap <C-down> :resize +5<cr>
 
-call plug#begin()
-Plug 'valloric/youcompleteme'
-Plug 'jszakmeister/vim-togglecursor'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-surround'
-Plug 'mattn/emmet-vim'
-Plug 'flazz/vim-colorschemes'
-call plug#end()
-
-" NERDTree
+" Downloads plug.vim
+"if empty(glob('~/.vim/autoload/plug.vim'))
+"  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+"          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"    autocmd VimEnter * PlugInstall | source $MYVIMRC
+"endif
+"
+"call plug#begin()
+"
+"" Automatically install missing plugins on startup
+"if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+"   autocmd VimEnter * PlugInstall | q
+"   endif
+"
+"Plug 'valloric/youcompleteme'
+"Plug 'jszakmeister/vim-togglecursor'
+"Plug 'scrooloose/nerdtree'
+"Plug 'tpope/vim-surround'
+"Plug 'mattn/emmet-vim'
+"Plug 'flazz/vim-colorschemes'
+"call plug#end()
