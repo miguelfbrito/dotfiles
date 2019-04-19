@@ -25,6 +25,8 @@ set laststatus=2
 set autoindent 
 set smartindent
 set clipboard=unnamedplus
+
+set ttymouse=xterm2
 set mouse=a
 
 set matchpairs+=<:>
