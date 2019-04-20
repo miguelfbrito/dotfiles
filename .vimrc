@@ -10,6 +10,11 @@ nnoremap K <C-u>
 nnoremap H gT
 nnoremap L gt
 
+" save on <c-s>
+nmap <c-s> :w<cr>
+imap <c-s> <esc>:w<cr>a
+vnoremap <c-s> <Esc>:w<CR>
+
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h

@@ -6,11 +6,13 @@ alias clav='cd ~/CLAV'
 alias webratio='cd ~/WebRatio; ./WebRatio &'
 alias mei='cd ~/mei'
 alias bashrc='vim ~/.bashrc && source ~/.bashrc'
+alias tmuxconf='vim ~/.tmux.conf'
 alias vimrc='vim ~/.vimrc'
 alias ea='cd ~/ea-1819'
 alias ew='cd ~/EW'
 alias idea="/opt/intelliJ/bin/idea.sh"
 alias dot="cd ~/dotfiles"
+alias naut="nautilus . &"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -57,12 +59,13 @@ alias gr='git remote'
 alias grv='git remote -v'
 alias gra='git remote add'
 alias gd='git diff'
+alias gdl='git diff --name-only --diff-filter=U'
 alias gds='git diff --staged'
 alias gdv='git diff -w "$@" | vim -R -'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gcm='git commit -v -m'
-alias gcam="git commit -v -am"
+alias gcam='git commit -v -am'
 alias gci='git commit --interactive'
 alias gb='git branch'
 alias gba='git branch -a'
@@ -262,4 +265,6 @@ if [ -f '/home/mbrito/google-cloud-sdk/completion.bash.inc' ]; then . '/home/mbr
 #export JAVA_HOME=/usr/lib/jvm/oracle_jdk7
 #export DERBY_HOME=/usr/lib/jvm/oracle_jdk7/db
 
-# Custom directories
+
+stty -ixon
+
