@@ -20,7 +20,7 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-set number
+set number relativenumber
 set autoindent
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 

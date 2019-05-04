@@ -13,6 +13,8 @@ alias ew='cd ~/EW'
 alias idea="/opt/intelliJ/bin/idea.sh"
 alias dot="cd ~/dotfiles"
 alias naut="nautilus . &"
+alias protege="~/Protege/run.sh &"
+alias robot="/opt/robot3t/bin/robo3t &"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -20,6 +22,10 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias .......="cd ../../../../../.."
+
+killport(){
+    kill -9 $(lsof -t -i:$1)
+}
 
 ########################################
 ########################################
@@ -59,7 +65,7 @@ alias gr='git remote'
 alias grv='git remote -v'
 alias gra='git remote add'
 alias gd='git diff'
-alias gdl='git diff --name-only --diff-filter=U'
+alias gdl='git diff --name-only --diff-filter=U' #lista ficheiros com conflitos
 alias gds='git diff --staged'
 alias gdv='git diff -w "$@" | vim -R -'
 alias gc='git commit -v'
