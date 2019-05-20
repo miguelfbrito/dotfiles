@@ -1,8 +1,10 @@
 export BASH_IT_THEME='gallifrey'
 export XDG_CURRENT_DESKTOP=GNOME
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export EDITOR='vim'
+
 export PATH=/usr/lib/postgresql/10/bin/:~/.local/bin:$JAVA_HOME:$PATH:~/.bash_it/custom/todo-cli
-export CATALINA_HOME=/usr/local/apache-tomcat9
+export CATALINA_HOME=/usr/local/apache-tomcat
 
 alias bashrc='vim ~/.bashrc && source ~/.bashrc'
 alias tmuxconf='vim ~/.tmux.conf'
@@ -14,11 +16,17 @@ alias webratio='cd ~/WebRatio; ./WebRatio &'
 alias mei='cd ~/mei'
 alias ea='cd ~/ea-1819'
 alias ew='cd ~/EW'
-alias idea="/opt/intelliJ/bin/idea.sh"
+alias idea="/opt/intelliJ/bin/idea.sh . &"
 alias dot="cd ~/dotfiles"
 alias naut="nautilus . &"
 alias protege="~/Protege/run.sh &"
 alias robot="/opt/robot3t/bin/robo3t &"
+
+alias vps="ssh root@vps_server"
+
+# DPKG
+alias dpkg-size="dpkg-query -W --showformat='${Installed-Size;10}\t${Package}\n' | sort -k1,1n"
+
 
 alias _="sudo"
 
@@ -340,3 +348,6 @@ export SCM_CHECK=true
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
+
+# Letter repeating dela
+xset r rate 200 45

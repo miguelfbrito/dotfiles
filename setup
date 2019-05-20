@@ -16,3 +16,4 @@ ln $DIR/.vimrc ~/.vimrc
 
 echo "Diretorio $DIR"
 
+source ~/.bashrc
