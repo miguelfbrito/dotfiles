@@ -1,7 +1,8 @@
 export BASH_IT_THEME='gallifrey'
 export XDG_CURRENT_DESKTOP=GNOME
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export EDITOR='vim'
+
 
 export PATH=/usr/lib/postgresql/10/bin/:~/.local/bin:$JAVA_HOME:$PATH:~/.bash_it/custom/todo-cli
 export CATALINA_HOME=/usr/local/apache-tomcat
@@ -21,8 +22,11 @@ alias dot="cd ~/dotfiles"
 alias naut="nautilus . &"
 alias protege="~/Protege/run.sh &"
 alias robot="/opt/robot3t/bin/robo3t &"
+alias copy="xclip -sel clipboard"
 
-alias vps="ssh root@vps_server"
+pdf(){ evince $1 & }
+
+alias vps="ssh vps_server"
 
 # DPKG
 alias dpkg-size="dpkg-query -W --showformat='${Installed-Size;10}\t${Package}\n' | sort -k1,1n"
@@ -158,12 +162,12 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
+HISTSIZE=5000
+HISTFILESIZE=5000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
@@ -278,12 +282,6 @@ if [ -f '/home/mbrito/google-cloud-sdk/completion.bash.inc' ]; then . '/home/mbr
 #    gcloud compute instances list | awk '{print $10}' | while read stuff; do create_and_connect $stuff; done;
 #}
 
-# JAVA 1.7 [WebRatio]
-#export J2SDKDIR=/usr/lib/jvm/oracle_jdk7
-#export J2REDIR=/usr/lib/jvm/oracle_jdk7/jre
-#export PATH=$PATH:/usr/lib/jvm/oracle_jdk7/bin:/usr/lib/jvm/oracle_jdk7/db/bin:/usr/lib/jvm/oracle_jdk7/jre/bin
-#export JAVA_HOME=/usr/lib/jvm/oracle_jdk7
-#export DERBY_HOME=/usr/lib/jvm/oracle_jdk7/db
 
 
 stty -ixon
@@ -351,3 +349,20 @@ source "$BASH_IT"/bash_it.sh
 
 # Letter repeating dela
 xset r rate 200 45
+
+# DOCKER
+
+alias portainer='docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer'
+
+dsh(){
+   docker exec -ti $1 /bin/bash 
+}
+
+
+# JAVA 1.7 [WebRatio]
+#export J2SDKDIR=/usr/lib/jvm/oracle_jdk7
+#export J2REDIR=/usr/lib/jvm/oracle_jdk7/jre
+#export PATH=$PATH:/usr/lib/jvm/oracle_jdk7/bin:/usr/lib/jvm/oracle_jdk7/db/bin:/usr/lib/jvm/oracle_jdk7/jre/bin
+#export JAVA_HOME=/usr/lib/jvm/oracle_jdk7
+#export DERBY_HOME=/usr/lib/jvm/oracle_jdk7/db
+
