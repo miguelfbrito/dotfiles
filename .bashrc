@@ -6,10 +6,12 @@ export EDITOR='vim'
 export PATH=/usr/lib/postgresql/10/bin/:~/.local/bin:$JAVA_HOME:$PATH:~/.bash_it/custom/todo-cli
 export CATALINA_HOME=/usr/local/apache-tomcat
 
-alias bashrc='vim ~/.bashrc && source ~/.bashrc'
-alias tmuxconf='vim ~/.tmux.conf'
-alias vimrc='vim ~/.vimrc'
-alias i3cfg='vim ~/.config/i3/config'
+DOTFILES='~/dotfiles'
+
+alias bashrc="vim ${DOTFILES}/.bashrc && source ${DOTFILES}/.bashrc"
+alias tmuxconf="vim ${DOTFILES}/.tmux.conf"
+alias vimrc="vim ${DOTFILES}/.vimrc"
+alias i3cfg="vim ${DOTFILES}/i3/config"
 
 alias clav='cd ~/CLAV'
 alias webratio='cd ~/WebRatio; ./WebRatio &'
