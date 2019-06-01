@@ -307,3 +307,6 @@ dsh(){
 dip(){
     docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $1
 }
+
+export PS1='\[\033[0;35m\]\h\[\033[0;32m\] \w\[\033[00m\]  '
+
