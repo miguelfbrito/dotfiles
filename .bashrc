@@ -1,8 +1,7 @@
-export BASH_IT_THEME='gallifrey'
+#export BASH_IT_THEME='gallifrey'
 export XDG_CURRENT_DESKTOP=GNOME
 #export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export EDITOR='vim'
-
 
 export PATH=/usr/lib/postgresql/10/bin/:~/.local/bin:$JAVA_HOME:$PATH:~/.bash_it/custom/todo-cli
 export CATALINA_HOME=/usr/local/apache-tomcat
@@ -23,6 +22,7 @@ alias naut="nautilus . &"
 alias protege="~/Protege/run.sh &"
 alias robot="/opt/robot3t/bin/robo3t &"
 alias copy="xclip -sel clipboard"
+alias r="ranger"
 
 pdf(){ evince $1 & }
 
@@ -30,7 +30,6 @@ alias vps="ssh vps_server"
 
 # DPKG
 alias dpkg-size="dpkg-query -W --showformat='${Installed-Size;10}\t${Package}\n' | sort -k1,1n"
-
 
 alias _="sudo"
 
@@ -284,85 +283,25 @@ if [ -f '/home/mbrito/google-cloud-sdk/completion.bash.inc' ]; then . '/home/mbr
 
 
 
-stty -ixon
-
-
 # If not running interactively, don't do anything
 case $- in
   *i*) ;;
     *) return;;
 esac
 
-# Path to the bash it configuration
-export BASH_IT="/home/mbrito/.bash_it"
-
-# Lock and Load a custom theme file.
-# Leave empty to disable theming.
-# location /.bash_it/themes/
-
-# (Advanced): Change this to the name of your remote repo if you
-# cloned bash-it with a remote other than origin such as `bash-it`.
-# export BASH_IT_REMOTE='bash-it'
-
-# Your place for hosting Git repos. I use this for private repos.
-export GIT_HOSTING='git@git.domain.com'
-
-# Don't check mail when opening terminal.
-unset MAILCHECK
-
-# Change this to your console based IRC client of choice.
-export IRC_CLIENT='irssi'
-
-# Set this to the command you use for todo.txt-cli
-export TODO="t"
-
-# Set this to false to turn off version control status checking within the prompt for all themes
-export SCM_CHECK=true
-
-# Set Xterm/screen/Tmux title with only a short hostname.
-# Uncomment this (or set SHORT_HOSTNAME to something else),
-# Will otherwise fall back on $HOSTNAME.
-#export SHORT_HOSTNAME=$(hostname -s)
-
-# Set Xterm/screen/Tmux title with only a short username.
-# Uncomment this (or set SHORT_USER to something else),
-# Will otherwise fall back on $USER.
-#export SHORT_USER=${USER:0:8}
-
-# Set Xterm/screen/Tmux title with shortened command and directory.
-# Uncomment this to set.
-#export SHORT_TERM_LINE=true
-
-# Set vcprompt executable path for scm advance info in prompt (demula theme)
-# https://github.com/djl/vcprompt
-#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
-
-# (Advanced): Uncomment this to make Bash-it reload itself automatically
-# after enabling or disabling aliases, plugins, and completions.
-# export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
-
-# Uncomment this to make Bash-it create alias reload.
-# export BASH_IT_RELOAD_LEGACY=1
-
-# Load Bash It
-source "$BASH_IT"/bash_it.sh
+# Solves the Ctrl+S problem
+stty -ixon
 
 # Letter repeating dela
 xset r rate 200 45
 
 # DOCKER
-
 alias portainer='docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer'
 
 dsh(){
    docker exec -ti $1 /bin/bash 
 }
 
-
-# JAVA 1.7 [WebRatio]
-#export J2SDKDIR=/usr/lib/jvm/oracle_jdk7
-#export J2REDIR=/usr/lib/jvm/oracle_jdk7/jre
-#export PATH=$PATH:/usr/lib/jvm/oracle_jdk7/bin:/usr/lib/jvm/oracle_jdk7/db/bin:/usr/lib/jvm/oracle_jdk7/jre/bin
-#export JAVA_HOME=/usr/lib/jvm/oracle_jdk7
-#export DERBY_HOME=/usr/lib/jvm/oracle_jdk7/db
-
+dip(){
+    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $1
+}
