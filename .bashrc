@@ -7,7 +7,6 @@ export PATH=/usr/lib/postgresql/10/bin/:~/.local/bin:$JAVA_HOME:$PATH:~/.bash_it
 export CATALINA_HOME=/usr/local/apache-tomcat
 
 DOTFILES='~/dotfiles'
-
 alias bashrc="vim ${DOTFILES}/.bashrc && source ${DOTFILES}/.bashrc"
 alias tmuxconf="vim ${DOTFILES}/.tmux.conf"
 alias vimrc="vim ${DOTFILES}/.vimrc"
@@ -24,6 +23,7 @@ alias naut="nautilus . &"
 alias protege="~/Protege/run.sh &"
 alias robot="/opt/robot3t/bin/robo3t &"
 alias copy="xclip -sel clipboard"
+alias no="vim ~/random_notes.md"
 alias r="ranger"
 
 pdf(){ evince $1 & }
@@ -299,6 +299,8 @@ xset r rate 200 45
 
 # DOCKER
 alias portainer='docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer'
+
+alias dka="docker kill $(docker ps -a -q)"
 
 dsh(){
    docker exec -ti $1 /bin/bash 

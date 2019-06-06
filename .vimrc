@@ -1,4 +1,4 @@
-" vim-gnome package to get ubuntu support for clipboard copy
+" Ubuntu Setup: vim-gnome package to get ubuntu support for clipboard copy
 
 set nocompatible
 
@@ -30,6 +30,7 @@ set laststatus=2
 set autoindent 
 set smartindent
 set clipboard=unnamedplus
+set ignorecase
 
 set ttymouse=xterm2
 set mouse=a

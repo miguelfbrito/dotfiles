@@ -5,9 +5,12 @@
 # this file and re-run i3-config-wizard(1).
 #
 
+# Keyboard letter speed
+exec_always --no-startup-id xset r rate 200 45
+
 for_window [class="^.*"] border pixel 1
 
-gaps inner 12 
+gaps inner 15 
 gaps outer 0 
 
 smart_gaps on
@@ -19,20 +22,18 @@ smart_borders on
 # xinput - configure keyboard and mouse 
 
 # ROFI
-# https://www.reddit.com/r/i3wm/comments/6vuen9/add_desktop_apps_to_dmenu/
+# https://www.reddit.com/r/i4wm/comments/6vuen9/add_desktop_apps_to_dmenu/
 
 
-
+exec --no-startup-id nitrogen --restore
 
 # Xinput
 # xinput list
 # xinput list-props <device-id>
-
-#set $mouse_id $(xinput list | grep TouchPad | grep -o 'id=[0-9]*' | grep -o '[0-9]*')
-exec xinput set-prop 11 279 1     # Keyboard Troubleshooting Tapping
-exec xinput set-prop 11 299 0.9   # Set mouse speed
-exec xinput set-prop 11 287 1     # Set natural scrolling
-
+# I
+exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' "libinput Tapping Enabled" 1
+exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' "libinput Accel Speed" 0.9
+exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' "libinput Natural Scrolling Enabled" 1
 
 exec nm-applet
 
@@ -86,8 +87,9 @@ set $floating_terminal "gnome_floating_terminal"
 exec --no-startup-id gnome-terminal --class=$floating_terminal
 for_window [class=$floating_terminal] move scratchpad, move position 1272 px 706 px
 bindsym $mod+t [class=$floating_terminal]  scratchpad show, resize set 700 350
+
 # kill focused window
-bindsym $mod+shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec "rofi -modi combi -combi-modi window,drun,run,ssh -show combi -width 35 -lines 7"
@@ -130,7 +132,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -302,6 +304,49 @@ bindsym $mod+Ctrl+Down move workspace to output down
 # Startup 
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
+exec --no-startup-id odrive-unofficial
 
 # Shortcut to open ranger (file manager/explorer)
 bindsym $mod+p exec gnome-terminal -e "bash -c \"ranger\""
+
+# Printsreen
+bindsym Shift+Print exec shutter -s
+bindsym Print exec shutter -f
+
+# i3gps
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+ 
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+ 
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+ 
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+ 
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+ 
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+ 
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
