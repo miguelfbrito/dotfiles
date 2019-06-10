@@ -9,6 +9,7 @@ export CATALINA_HOME=/usr/local/apache-tomcat
 DOTFILES='~/dotfiles'
 alias bashrc="vim ${DOTFILES}/.bashrc && source ${DOTFILES}/.bashrc"
 alias tmuxconf="vim ${DOTFILES}/.tmux.conf"
+alias kmux="pkill -f tmux"
 alias vimrc="vim ${DOTFILES}/.vimrc"
 alias i3cfg="vim ${DOTFILES}/i3/config"
 
@@ -300,15 +301,24 @@ xset r rate 200 45
 # DOCKER
 alias portainer='docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer'
 
-alias dka="docker kill $(docker ps -a -q)"
+dps() {
+    docker ps -a
+}
+
+dka() { 
+    docker kill $(docker ps -a -q)
+}
+dsa() { 
+    docker stop $(docker ps -a -q)
+}
 
 dsh(){
-   docker exec -ti $1 /bin/bash 
+    docker exec -ti $1 /bin/bash 
 }
 
 dip(){
-    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $1
+   docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $1
 }
 
-export PS1='\[\033[0;35m\]\h\[\033[0;32m\] \w\[\033[00m\]  '
+export PS1='\[\033[0;35m\]\h\[\033[0;32m\] \w\[\033[00m\] '
 

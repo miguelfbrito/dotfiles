@@ -84,9 +84,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # Scratchpad popup gnome-terminal
 set $floating_terminal "gnome_floating_terminal"
-exec --no-startup-id gnome-terminal --class=$floating_terminal
-for_window [class=$floating_terminal] move scratchpad, move position 1272 px 706 px
-bindsym $mod+t [class=$floating_terminal]  scratchpad show, resize set 700 350
+exec --no-startup-id gnome-terminal --class=$floating_terminal 
+for_window [class=$floating_terminal] move scratchpad #, move position 1272 px 706 px
+bindsym $mod+t [class=$floating_terminal]  scratchpad show, resize set 900 550
 
 # kill focused window
 bindsym $mod+q kill
