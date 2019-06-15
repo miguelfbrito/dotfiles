@@ -1,5 +1,14 @@
 {
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/node_modules/**": true
+    },
     "editor.glyphMargin": false,
+    "editor.wordWrap": "on",
     "window.titleBarStyle": "native",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -55,7 +64,7 @@
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
     },
-    "window.zoomLevel": -0.1,
+    "window.zoomLevel": -1,
     "vim.useSystemClipboard": true,
     "editor.minimap.enabled": false,
     "editor.fontSize": 18,
@@ -75,5 +84,8 @@
     "[python]": {},
     "explorer.confirmDelete": false,
     "workbench.statusBar.feedback.visible": false,
-    "workbench.editor.labelFormat": "short"
+    "workbench.editor.labelFormat": "short",
+    "explorer.confirmDragAndDrop": false,
+    "breadcrumbs.enabled": true,
+    "javascript.updateImportsOnFileMove.enabled": "always"
 }
