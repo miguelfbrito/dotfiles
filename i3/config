@@ -32,7 +32,7 @@ exec --no-startup-id nitrogen --restore
 # xinput list-props <device-id>
 # I
 exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' "libinput Tapping Enabled" 1
-exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' "libinput Accel Speed" 0.9
+exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' "libinput Accel Speed" 0.7
 exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' "libinput Natural Scrolling Enabled" 1
 
 exec nm-applet
