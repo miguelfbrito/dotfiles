@@ -11,7 +11,8 @@ alias bashrc="vim ${DOTFILES}/.bashrc && source ${DOTFILES}/.bashrc"
 alias tmuxconf="vim ${DOTFILES}/.tmux.conf"
 alias kmux="pkill -f tmux"
 alias vimrc="vim ${DOTFILES}/.vimrc"
-alias i3cfg="vim ${DOTFILES}/i3/config"
+alias i3cfg="vim ${DOTFILES}/.config/i3/config"
+alias polycfg="vim ${DOTFILES}/.config/polybar/config"
 
 alias clav='cd ~/CLAV'
 alias webratio='cd ~/WebRatio; ./WebRatio &'

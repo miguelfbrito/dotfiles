@@ -16,7 +16,7 @@ ln $DIR/.bashrc ~/.bashrc
 ln $DIR/.tmux.conf ~/.tmux.conf
 ln $DIR/.vimrc ~/.vimrc
 
-ln -s $DIR/i3 ~/.config
+ln -s $DIR/i3 ~/.config/i3/
 ln -s $DIR/i3blocks ~/.config
 
 echo "Diretorio $DIR"
