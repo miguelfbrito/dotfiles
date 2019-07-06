@@ -1,10 +1,7 @@
-#export BASH_IT_THEME='gallifrey'
 export XDG_CURRENT_DESKTOP=GNOME
-#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export EDITOR='vim'
 
 export PATH=/usr/lib/postgresql/10/bin/:~/.local/bin:$JAVA_HOME:$PATH:~/.bash_it/custom/todo-cli
-export CATALINA_HOME=/usr/local/apache-tomcat
 
 DOTFILES='~/dotfiles'
 alias bashrc="vim ${DOTFILES}/.bashrc && source ${DOTFILES}/.bashrc"

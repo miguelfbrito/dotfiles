@@ -12,9 +12,10 @@ mv ~/.config/i3 ~/.config/i3_$BACKUP_SUFFIX
 mv ~/.config/i3blocks ~/.config/i3blocks_$BACKUP_SUFFIX
 
 # Create symlinks
-ln $DIR/.bashrc ~/.bashrc
-ln $DIR/.tmux.conf ~/.tmux.conf
-ln $DIR/.vimrc ~/.vimrc
+ln -s $DIR/.bashrc ~/.bashrc
+ln -s $DIR/.tmux.conf ~/.tmux.conf
+ln -s $DIR/.vimrc ~/.vimrc
+ln -s $DIR/.config/terminator/ ~/.config/terminator
 
 ln -s $DIR/i3 ~/.config/i3/
 ln -s $DIR/i3blocks ~/.config
