@@ -1,7 +1,7 @@
 export XDG_CURRENT_DESKTOP=GNOME
 export EDITOR='vim'
 
-export PATH=/usr/lib/postgresql/10/bin/:~/.local/bin:$JAVA_HOME:$PATH:~/.bash_it/custom/todo-cli
+export PATH=~/.local/bin:$PATH:~/.npm
 
 DOTFILES='~/dotfiles'
 alias bashrc="vim ${DOTFILES}/.bashrc && source ${DOTFILES}/.bashrc"
@@ -22,12 +22,16 @@ alias naut="nautilus . &"
 alias protege="~/Protege/run.sh &"
 alias robot="/opt/robot3t/bin/robo3t &"
 alias copy="xclip -sel clipboard"
-alias no="vim ~/random_notes.md"
+alias no="vim ~/drive/vimwiki/index.wiki"
 alias r="ranger"
+alias v="vim"
+
+alias py="/usr/bin/python3"
+alias python="/usr/bin/python3"
 
 pdf(){ evince $1 & }
 
-alias vps="ssh vps_server"
+alias vps="ssh vps"
 
 # DPKG
 alias dpkg-size="dpkg-query -W --showformat='${Installed-Size;10}\t${Package}\n' | sort -k1,1n"
@@ -320,3 +324,11 @@ dip(){
 
 export PS1='\[\033[0;35m\]\h\[\033[0;32m\] \w\[\033[00m\] '
 
+# Vi bash
+set -o vi
+bind '"jk":vi-movement-mode'
+bind '"\C-l":clear-screen'
+bind '"ciw":lbcw'
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -1,8 +1,10 @@
 " Ubuntu Setup: vim-gnome package to get ubuntu support for clipboard copy
 
 set nocompatible
+filetype plugin on
+syntax on 
 
-let mapleader='\<Space>'
+let mapleader="\<Space>"
 
 inoremap jk <Esc>
 nnoremap J <C-d>
@@ -45,3 +47,34 @@ nnoremap <C-up> :resize -5<cr>
 nnoremap <C-down> :resize +5<cr>
 
 cnoremap sudow w !sudo tee % > /dev/null
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+" Automatically install missing plugins on startup
+if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+    autocmd VimEnter * PlugInstall | q
+endif
+
+" Plugins
+Plug 'junegunn/fzf', {'dir': '~/.fzf/', 'do': './install -all'}
+Plug 'junegunn/fzf.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'itchyny/calendar.vim'
+call plug#end()
+
+" Vimwiki
+let g:vimwiki_list = [{'path': '~/drive/vimwiki'}]
+
+" Calendar
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+
+
+" fzf
+nnoremap <C-p> :Files<CR>
+inoremap <C-p> <Esc>:Files<CR>

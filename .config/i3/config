@@ -8,10 +8,10 @@
 # Keyboard letter speed
 exec_always --no-startup-id xset r rate 200 45
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 
-gaps inner 5
-gaps outer 0 
+gaps inner 10
+gaps outer 0
 
 smart_gaps on
 smart_borders on
@@ -24,8 +24,13 @@ smart_borders on
 # ROFI
 # https://www.reddit.com/r/i4wm/comments/6vuen9/add_desktop_apps_to_dmenu/
 
-
+# Startup 
+exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id fluxgui
+exec --no-startup-id compton
+exec --no-startup-id odrive-unofficial
 
 # Xinput
 # xinput list
@@ -83,10 +88,16 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # Scratchpad popup gnome-terminal
-set $floating_terminal "gnome_floating_terminal"
-exec --no-startup-id gnome-terminal --class=$floating_terminal 
-for_window [class=$floating_terminal] move scratchpad #, move position 1272 px 706 px
-bindsym $mod+t [class=$floating_terminal]  scratchpad show, resize set 900 550
+#set $floating_terminal "gnome_floating_terminal"
+#exec --no-startup-id gnome-terminal --class=$floating_terminal 
+#for_window [class=$floating_terminal] move scratchpad #, move position 1272 px 706 px
+#bindsym $mod+t [class=$floating_terminal]  scratchpad show, resize set 900 550
+
+# Scratchpad popup terminator
+set $floating_terminal "terminator_floating"
+exec_always --no-startup-id terminator -T "$floating_terminal" -p "float_terminal"
+for_window [title=$floating_terminal] move scratchpad #, move position 1272 px 706 px
+bindsym $mod+t [title=$floating_terminal]  scratchpad show, resize set 900 550
 
 # kill focused window
 bindsym $mod+q kill
@@ -189,7 +200,6 @@ for_window [class="jetbrains-idea-ce"] move to workspace $ws3
 # for_window [class="Gnome-terminal"] move to workspace $ws2
 
 
-bindsym $mod+shift+m exec shutdown now
 # reload the configuration file
 bindsym $mod+shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -226,9 +236,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-
 # Color scheme (Gruvbox dark)
 set $color_normal_white  #a89984
 set $color_bright_white  #ebdbb2
@@ -237,7 +244,7 @@ set $color_bright_gray   #3c3836
 set $color_bright_yellow #d79921
 set $color_normal_black  #282828
 set $color_unused        #ff0000
-set $color_test          #d79921
+set $color_test          #FF5154
 
 #colors                  border                 background             text                   indicator       child_border
 #client.focused            $color_test            $color_bright_gray     $color_bright_white    $color_bright_white   $color_normal_white
@@ -286,10 +293,6 @@ bindsym $mod+Ctrl+Up move workspace to output up
 bindsym $mod+Ctrl+Down move workspace to output down
 
 
-# Startup 
-exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
-exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
-exec --no-startup-id odrive-unofficial
 
 # Shortcut to open ranger (file manager/explorer)
 bindsym $mod+p exec gnome-terminal -e "bash -c \"ranger\""
@@ -298,7 +301,7 @@ bindsym $mod+p exec gnome-terminal -e "bash -c \"ranger\""
 bindsym Shift+Print exec shutter -s
 bindsym Print exec shutter -f
 
-# i3gps
+# i3-gaps mode
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -335,3 +338,11 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+# Power options
+bindsym $mod+shift+F10 exec systemctl suspend
+bindsym $mod+shift+F11 exec reboot 
+bindsym $mod+shift+F12 exec shutdown now
+
+# Block bluetooth
+exec --no-startup-id rfkill block bluetooth
