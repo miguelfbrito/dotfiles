@@ -1,7 +1,7 @@
 export XDG_CURRENT_DESKTOP=GNOME
 export EDITOR='vim'
 
-export PATH=~/.local/bin:$PATH:~/.npm
+export PATH=~/.local/bin:$PATH:~/.npm:~/.npm/bin
 
 DOTFILES='~/dotfiles'
 alias bashrc="vim ${DOTFILES}/.bashrc && source ${DOTFILES}/.bashrc"
@@ -16,9 +16,13 @@ alias webratio='cd ~/WebRatio; ./WebRatio &'
 alias mei='cd ~/mei'
 alias ea='cd ~/ea-1819'
 alias ew='cd ~/EW'
+alias po='cd ~/PoGoRaids'
+
 alias idea="/opt/intelliJ/bin/idea.sh . &"
 alias dot="cd ~/dotfiles"
 alias naut="nautilus . &"
+
+thu() { nohup thunar . > /dev/null 2>&1 & } 
 alias protege="~/Protege/run.sh &"
 alias robot="/opt/robot3t/bin/robo3t &"
 alias copy="xclip -sel clipboard"
@@ -29,7 +33,7 @@ alias v="vim"
 alias py="/usr/bin/python3"
 alias python="/usr/bin/python3"
 
-pdf(){ evince $1 & }
+pdf(){ nohup evince $1 > /dev/null 2>&1 & }
 
 alias vps="ssh vps"
 
