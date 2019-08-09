@@ -10,7 +10,8 @@ exec_always --no-startup-id xset r rate 200 45
 
 for_window [class="^.*"] border pixel 1
 
-gaps inner 10
+# gaps vertical 0 4.17 only
+gaps inner 15
 gaps outer 0
 
 smart_gaps on
@@ -69,7 +70,7 @@ bindsym $mod+Right workspace next
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8
-font pango:DejaVu 22
+font pango:Overpass 18
 
 # this font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -245,7 +246,7 @@ set $color_bright_gray   #3c3836
 set $color_bright_yellow #d79921
 set $color_normal_black  #282828
 set $color_unused        #ff0000
-set $color_test          #FF5154
+set $color_test          #eeb868
 
 #colors                  border                 background             text                   indicator       child_border
 #client.focused            $color_test            $color_bright_gray     $color_bright_white    $color_bright_white   $color_normal_white
