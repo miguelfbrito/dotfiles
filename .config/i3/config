@@ -4,14 +4,16 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
+# 4.17 i3 i think
+# border_radius 10
 
 # Keyboard letter speed
 exec_always --no-startup-id xset r rate 200 45
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 
 # gaps vertical 0 4.17 only
-gaps inner 15
+gaps inner 12
 gaps outer 0
 
 smart_gaps on
@@ -26,7 +28,7 @@ smart_borders on
 # https://www.reddit.com/r/i4wm/comments/6vuen9/add_desktop_apps_to_dmenu/
 
 # Startup 
-exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+exec --no-startup-id ~/.config/dunst/reload
 exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
@@ -246,7 +248,7 @@ set $color_bright_gray   #3c3836
 set $color_bright_yellow #d79921
 set $color_normal_black  #282828
 set $color_unused        #ff0000
-set $color_test          #eeb868
+set $color_test          #DBC799
 
 #colors                  border                 background             text                   indicator       child_border
 #client.focused            $color_test            $color_bright_gray     $color_bright_white    $color_bright_white   $color_normal_white
