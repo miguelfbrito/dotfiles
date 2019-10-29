@@ -22,12 +22,20 @@ alias idea="/opt/intelliJ/bin/idea.sh . &"
 alias dot="cd ~/dotfiles"
 alias naut="nautilus . &"
 
+t() { nohup thunar . > /dev/null 2>&1 & } 
+th() { nohup thunar . > /dev/null 2>&1 & } 
 thu() { nohup thunar . > /dev/null 2>&1 & } 
+thun() { nohup thunar . > /dev/null 2>&1 & } 
+thunar() { nohup thunar . > /dev/null 2>&1 & } 
+
 alias protege="~/Protege/run.sh &"
 alias robot="/opt/robot3t/bin/robo3t &"
 alias copy="xclip -sel clipboard"
 alias no="vim ~/drive/vimwiki/index.wiki"
-alias r="ranger"
+
+alias r='ranger --choosedir=$HOME/.rangerdir; cd "$(cat $HOME/.rangerdir)"'
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
 alias v="vim"
 
 alias py="/usr/bin/python3"
@@ -334,5 +342,21 @@ bind '"jk":vi-movement-mode'
 bind '"\C-l":clear-screen'
 bind '"ciw":lbcw'
 
+google()
+{
+    local s="$_"
+    local query=
+
+    case "$1" in
+        '')   ;;
+        that) query="search?q=${s//[[:space:]]/+}" ;;
+        *)    s="$*"; query="search?q=${s//[[:space:]]/+}" ;;
+    esac
+
+    echo open /Applications/Google\ Chrome.app/ "http://www.google.com/${query}"
+}
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# eval $(/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)

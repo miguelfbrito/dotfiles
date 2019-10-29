@@ -1,7 +1,9 @@
 " Ubuntu Setup: vim-gnome package to get ubuntu support for clipboard copy
+"
+"
 
 set nocompatible
-filetype plugin on
+filetype plugin indent on
 syntax on 
 
 let mapleader="\<Space>"
@@ -11,6 +13,9 @@ nnoremap J <C-d>
 nnoremap K <C-u>
 nnoremap H gT
 nnoremap L gt
+
+" Paste after adding space
+nnoremap <leader>p li<space><esc>p
 
 " save on <c-s>
 nmap <c-s> :w<cr>
@@ -35,6 +40,7 @@ set autoindent
 set smartindent
 set clipboard=unnamedplus
 set ignorecase
+set linebreak
 
 set ttymouse=xterm2
 set mouse=a
@@ -67,6 +73,16 @@ Plug 'junegunn/fzf', {'dir': '~/.fzf/', 'do': './install -all'}
 Plug 'junegunn/fzf.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'itchyny/calendar.vim'
+Plug 'lervag/vimtex'
+Plug 'scrooloose/nerdtree'
+
+" snippets
+" Track the engine.
+Plug 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
+
 call plug#end()
 
 " Vimwiki
@@ -76,7 +92,20 @@ let g:vimwiki_list = [{'path': '~/drive/vimwiki'}]
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
+" UltiSnips
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Nerdtree
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 " fzf
+"
 nnoremap <C-p> :Files<CR>
 inoremap <C-p> <Esc>:Files<CR>

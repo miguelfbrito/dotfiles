@@ -35,7 +35,7 @@ white = #fff
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 30
+height = 25
 ;offset-x = 0
 ;offset-y = 0
 radius = 0.0
@@ -58,10 +58,9 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 5
 
-font-0 = "Overpass:size=11:weight=145;2"
+font-0 = "Overpass:size=9:weight=175;1"
 font-1 = FontAwesome:style=Solid:size=10;2
 font-2 = "Font Awesome 5 Pro:style=Solid:size=11;3"
-
 
 modules-left = i3
 ;modules-center = date
@@ -108,7 +107,7 @@ label-focused = %index%
 label-focused-foreground = ${colors.primary} 
 label-focused-background = ${colors.secondary}
 ;label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.secondary}
+label-focused-underline = ${colors.primary}
 label-focused-padding = 2
 
 
@@ -116,11 +115,12 @@ label-focused-padding = 2
 label-unfocused = %index%
 label-unfocused-padding = 2
 label-unfocused-foreground = ${colors.secondary}
+label-unfocused-background = ${colors.primary}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
+label-visible-background = ${colors.primary}
+;label-visible-underline = ${colors.secondary}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set

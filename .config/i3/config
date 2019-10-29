@@ -6,11 +6,12 @@
 #
 # 4.17 i3 i think
 # border_radius 10
+#
+# pavucontrol - manage audio devices
+# autorandr - auto detect docked devices and adjust xrandr (autorandr --save [docked|mobile])
 
-# Keyboard letter speed
-exec_always --no-startup-id xset r rate 200 45
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 
 # gaps vertical 0 4.17 only
 gaps inner 12
@@ -28,18 +29,20 @@ smart_borders on
 # https://www.reddit.com/r/i4wm/comments/6vuen9/add_desktop_apps_to_dmenu/
 
 # Startup 
+exec_always --no-startup-id xset r rate 200 45  #keyboard letter speed
 exec --no-startup-id ~/.config/dunst/reload
-exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
+#exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
 exec --no-startup-id compton
+exec --no-startup-id indicator-cpufreq
+exec --no-startup-id tusk
 #exec --no-startup-id odrive-unofficial
 #exec --no-startup-id fluxgui
-
+#
 # Xinput
 # xinput list
 # xinput list-props <device-id>
-# I
 exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' "libinput Tapping Enabled" 1
 exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' "libinput Accel Speed" 0.7
 exec_always --no-startup-id xinput set-prop 'SynPS/2 Synaptics TouchPad' "libinput Natural Scrolling Enabled" 1
@@ -69,6 +72,8 @@ bindsym $mod2+$right workspace next
 bindsym $mod+Left workspace prev
 bindsym $mod+Right workspace next
 
+bindsym $mod+x exec --no-startup-id urxvt -e "ranger"
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8
@@ -89,7 +94,7 @@ font pango:Overpass 18
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt -e 'tmux' #i3-sensible-terminal
 
 # Scratchpad popup gnome-terminal
 #set $floating_terminal "gnome_floating_terminal"
@@ -106,8 +111,11 @@ bindsym $mod+t [title=$floating_terminal]  scratchpad show, resize set 900 550
 # kill focused window
 bindsym $mod+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec "rofi -modi combi -combi-modi window,drun,run,ssh -show combi -width 35 -lines 7"
+# ROFI (-combi-mode window)
+bindsym $mod+d exec "rofi -color-normal '#c6c8c6,#1e1f29,#c6c8c6,#eee8d5,#eee8d6' -modi combi -combi-modi drun,run,ssh -show combi -show-icons -width 35 -lines 7"
+bindsym $mod+i exec "echo '' | rofi -dmenu -p 'Google Search' -width 30 -lines 0 | xargs -I{} xdg-open https://www.google.com/search?q={}"
+# google search rofi
+
 # there also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. it is a wrapper around dmenu, so you need that
 # installed.
@@ -248,7 +256,7 @@ set $color_bright_gray   #3c3836
 set $color_bright_yellow #d79921
 set $color_normal_black  #282828
 set $color_unused        #ff0000
-set $color_test          #DBC799
+set $color_test          #654648
 
 #colors                  border                 background             text                   indicator       child_border
 #client.focused            $color_test            $color_bright_gray     $color_bright_white    $color_bright_white   $color_normal_white
@@ -343,10 +351,17 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
+# i3lock
+bindsym $mod+shift+F9 exec i3lock -c 000000
+
 # Power options
-bindsym $mod+shift+F10 exec systemctl suspend
+bindsym $mod+shift+F10 exec "i3lock -c 000000; systemctl suspend"
 bindsym $mod+shift+F11 exec reboot 
 bindsym $mod+shift+F12 exec shutdown now
+
+#Monitor Layout
+bindsym $mod+shift+F1 exec "xrandr --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --mode 1920x1080 --pos 1920x0 --rotate normal"
+bindsym $mod+shift+F2 exec "xrandr --output HDMI-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal"
 
 # Block bluetooth
 exec --no-startup-id rfkill block bluetooth
