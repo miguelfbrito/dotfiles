@@ -14,9 +14,6 @@ nnoremap K <C-u>
 nnoremap H gT
 nnoremap L gt
 
-" Paste after adding space
-nnoremap <leader>p li<space><esc>p
-
 " save on <c-s>
 nmap <c-s> :w<cr>
 imap <c-s> <esc>:w<cr>a
@@ -31,7 +28,7 @@ map <C-x> :! sh ./% <CR>
 
 set number relativenumber
 set autoindent
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 set showcmd
 set encoding=utf-8

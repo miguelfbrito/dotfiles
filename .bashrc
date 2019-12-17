@@ -1,7 +1,8 @@
 export XDG_CURRENT_DESKTOP=GNOME
 export EDITOR='vim'
 
-export PATH=~/.local/bin:$PATH:~/.npm:~/.npm/bin
+export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk-amd64'
+export PATH=~/.local/bin:$PATH:~/.npm:~/.npm/bin:$JAVA_HOME
 
 DOTFILES='~/dotfiles'
 alias bashrc="vim ${DOTFILES}/.bashrc && source ${DOTFILES}/.bashrc"
@@ -17,10 +18,11 @@ alias mei='cd ~/mei'
 alias ea='cd ~/ea-1819'
 alias ew='cd ~/EW'
 alias po='cd ~/PoGoRaids'
+alias idea="/usr/local/bin/idea-intellij/bin/idea.sh"
 
-alias idea="/opt/intelliJ/bin/idea.sh . &"
-alias dot="cd ~/dotfiles"
+alias dotf="cd ~/dotfiles"
 alias naut="nautilus . &"
+alias progex="/home/mbrito/git/progex/target/progex"
 
 t() { nohup thunar . > /dev/null 2>&1 & } 
 th() { nohup thunar . > /dev/null 2>&1 & } 
@@ -172,14 +174,18 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoredups:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=5000
-HISTFILESIZE=5000
+HISTSIZE=1000000
+HISTFILESIZE=1000000
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize

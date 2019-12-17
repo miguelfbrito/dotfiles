@@ -9,8 +9,10 @@
 #
 # pavucontrol - manage audio devices
 # autorandr - auto detect docked devices and adjust xrandr (autorandr --save [docked|mobile])
+#
 
-
+title_align center
+new_window normal 0
 for_window [class="^.*"] border pixel 1
 
 # gaps vertical 0 4.17 only
@@ -27,14 +29,13 @@ smart_borders on
 
 # ROFI
 # https://www.reddit.com/r/i4wm/comments/6vuen9/add_desktop_apps_to_dmenu/
-
 # Startup 
 exec_always --no-startup-id xset r rate 200 45  #keyboard letter speed
 exec --no-startup-id ~/.config/dunst/reload
 #exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
-exec --no-startup-id compton
+exec --no-startup-id compton -cCGb --backend glx --vsync opengl
 exec --no-startup-id indicator-cpufreq
 exec --no-startup-id tusk
 #exec --no-startup-id odrive-unofficial
@@ -77,7 +78,7 @@ bindsym $mod+x exec --no-startup-id urxvt -e "ranger"
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8
-font pango:Overpass 18
+font pango:Overpass 7
 
 # this font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -94,7 +95,8 @@ font pango:Overpass 18
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt -e 'tmux' #i3-sensible-terminal
+# bindsym $mod+Return exec urxvt -e 'tmux' #i3-sensible-terminal
+bindsym $mod+Return exec ~/scripts/shell.sh
 
 # Scratchpad popup gnome-terminal
 #set $floating_terminal "gnome_floating_terminal"
@@ -103,10 +105,15 @@ bindsym $mod+Return exec urxvt -e 'tmux' #i3-sensible-terminal
 #bindsym $mod+t [class=$floating_terminal]  scratchpad show, resize set 900 550
 
 # Scratchpad popup terminator
+#set $floating_terminal "terminator_floating"
+#exec_always --no-startup-id terminator -T "$floating_terminal" -p "float_terminal"
+#for_window [title=$floating_terminal] move scratchpad #, move position 1272 px 706 px
+#bindsym $mod+t [title=$floating_terminal]  scratchpad show, resize set 900 550
+#
 set $floating_terminal "terminator_floating"
-exec_always --no-startup-id terminator -T "$floating_terminal" -p "float_terminal"
-for_window [title=$floating_terminal] move scratchpad #, move position 1272 px 706 px
-bindsym $mod+t [title=$floating_terminal]  scratchpad show, resize set 900 550
+exec_always --no-startup-id urxvt -name "$floating_terminal" 
+for_window [instance=$floating_terminal] move scratchpad #, move position 1272 px 706 px
+bindsym $mod+t [instance=$floating_terminal]  scratchpad show, resize set 800 350
 
 # kill focused window
 bindsym $mod+q kill
@@ -253,14 +260,16 @@ set $color_normal_white  #a89984
 set $color_bright_white  #ebdbb2
 set $color_normal_gray   #222222
 set $color_bright_gray   #3c3836
-set $color_bright_yellow #d79921
+set $color_bright_yellow #f99921
 set $color_normal_black  #282828
 set $color_unused        #ff0000
-set $color_test          #654648
+set $color_test          #946f29
+set $color_test2         #946f29
+set $color_black         #000000
 
 #colors                  border                 background             text                   indicator       child_border
 #client.focused            $color_test            $color_bright_gray     $color_bright_white    $color_bright_white   $color_normal_white
-client.focused            $color_test  $color_test $color_test $color_test $color_test $color_test 
+client.focused            $color_test            $color_test2           $color_black           $color_test     $color_test 
 client.focused_inactive   $color_bright_gray     $color_bright_gray     $color_bright_white    $color_unused   $color_normal_black
 client.unfocused          $color_normal_gray     $color_normal_gray     $color_normal_white    $color_unused   $color_normal_black
 client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused   $color_unused
