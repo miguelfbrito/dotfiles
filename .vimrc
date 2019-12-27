@@ -72,6 +72,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'itchyny/calendar.vim'
 Plug 'lervag/vimtex'
 Plug 'scrooloose/nerdtree'
+Plug 'jceb/vim-orgmode'
+Plug 'tpope/vim-speeddating'
 
 " snippets
 " Track the engine.
@@ -83,7 +85,8 @@ Plug 'honza/vim-snippets'
 call plug#end()
 
 " Vimwiki
-let g:vimwiki_list = [{'path': '~/drive/vimwiki'}]
+let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_folding = 'expr'
 
 " Calendar
 let g:calendar_google_calendar = 1

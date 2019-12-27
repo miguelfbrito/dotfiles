@@ -5,24 +5,15 @@ export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk-amd64'
 export PATH=~/.local/bin:$PATH:~/.npm:~/.npm/bin:$JAVA_HOME
 
 DOTFILES='~/dotfiles'
+
+alias dotf="cd ~/dotfiles"
 alias bashrc="vim ${DOTFILES}/.bashrc && source ${DOTFILES}/.bashrc"
 alias tmuxconf="vim ${DOTFILES}/.tmux.conf"
 alias kmux="pkill -f tmux"
 alias vimrc="vim ${DOTFILES}/.vimrc"
 alias i3cfg="vim ${DOTFILES}/.config/i3/config"
 alias polycfg="vim ${DOTFILES}/.config/polybar/config"
-
-alias clav='cd ~/CLAV'
-alias webratio='cd ~/WebRatio; ./WebRatio &'
-alias mei='cd ~/mei'
-alias ea='cd ~/ea-1819'
-alias ew='cd ~/EW'
-alias po='cd ~/PoGoRaids'
-alias idea="/usr/local/bin/idea-intellij/bin/idea.sh"
-
-alias dotf="cd ~/dotfiles"
-alias naut="nautilus . &"
-alias progex="/home/mbrito/git/progex/target/progex"
+alias xres="vim ${DOTFILES}/.Xresources; xrdb -merge ~/.Xresources"
 
 t() { nohup thunar . > /dev/null 2>&1 & } 
 th() { nohup thunar . > /dev/null 2>&1 & } 
@@ -30,10 +21,8 @@ thu() { nohup thunar . > /dev/null 2>&1 & }
 thun() { nohup thunar . > /dev/null 2>&1 & } 
 thunar() { nohup thunar . > /dev/null 2>&1 & } 
 
-alias protege="~/Protege/run.sh &"
-alias robot="/opt/robot3t/bin/robo3t &"
 alias copy="xclip -sel clipboard"
-alias no="vim ~/drive/vimwiki/index.wiki"
+alias no="vim ~/vimwiki/index.md"
 
 alias r='ranger --choosedir=$HOME/.rangerdir; cd "$(cat $HOME/.rangerdir)"'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
@@ -178,9 +167,7 @@ HISTCONTROL=ignoredups:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
-
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
-
+PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000000
@@ -365,4 +352,4 @@ google()
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # eval $(/bin/brew shellenv)
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)

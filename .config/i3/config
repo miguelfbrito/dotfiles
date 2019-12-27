@@ -35,7 +35,7 @@ exec --no-startup-id ~/.config/dunst/reload
 #exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
-exec --no-startup-id compton -cCGb --backend glx --vsync opengl
+exec --no-startup-id compton -cCGb --backend glx --vsync opengl --config ~/.config/compton.conf
 exec --no-startup-id indicator-cpufreq
 exec --no-startup-id tusk
 #exec --no-startup-id odrive-unofficial
@@ -369,8 +369,8 @@ bindsym $mod+shift+F11 exec reboot
 bindsym $mod+shift+F12 exec shutdown now
 
 #Monitor Layout
-bindsym $mod+shift+F1 exec "xrandr --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --mode 1920x1080 --pos 1920x0 --rotate normal"
-bindsym $mod+shift+F2 exec "xrandr --output HDMI-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal"
+bindsym $mod+shift+F1 exec "xrandr --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --mode 1920x1080 --pos 1920x0 --rotate normal && i3-msg restart"
+bindsym $mod+shift+F2 exec "xrandr --output HDMI-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal && i3-msg restart"
 
 # Block bluetooth
 exec --no-startup-id rfkill block bluetooth
