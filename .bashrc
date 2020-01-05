@@ -2,7 +2,7 @@ export XDG_CURRENT_DESKTOP=GNOME
 export EDITOR='vim'
 
 export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk-amd64'
-export PATH=~/.local/bin:$PATH:~/.npm:~/.npm/bin:$JAVA_HOME
+export PATH=~/.local/bin:$PATH:~/.npm:~/.npm/bin:$JAVA_HOME:~/scripts
 
 DOTFILES='~/dotfiles'
 

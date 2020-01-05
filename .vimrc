@@ -86,7 +86,14 @@ call plug#end()
 
 " Vimwiki
 let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+" ✗○◐●✓
+let g:vimwiki_listsyms = ' ○◐●✓'
 let g:vimwiki_folding = 'expr'
+
+" Opens new Vimwiki diary page from calendar
+autocmd FileType calendar nmap <buffer> <CR> :<C-u>call vimwiki#diary#calendar_action(b:calendar.day().get_day(), b:calendar.day().get_month(), b:calendar.day().get_year(), b:calendar.day().week(), "V")<CR>
+" Creates a new diary page based on a template
+au BufNewFile ~/vimwiki/diary/*.md :silent 0r !~/dotfiles/scripts/generate-vimwiki-diary-template.sh '%'
 
 " Calendar
 let g:calendar_google_calendar = 1

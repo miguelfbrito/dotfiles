@@ -29,6 +29,7 @@ smart_borders on
 
 # ROFI
 # https://www.reddit.com/r/i4wm/comments/6vuen9/add_desktop_apps_to_dmenu/
+
 # Startup 
 exec_always --no-startup-id xset r rate 200 45  #keyboard letter speed
 exec --no-startup-id ~/.config/dunst/reload
@@ -38,8 +39,10 @@ exec --no-startup-id nm-applet
 exec --no-startup-id compton -cCGb --backend glx --vsync opengl --config ~/.config/compton.conf
 exec --no-startup-id indicator-cpufreq
 exec --no-startup-id tusk
+exec --no-startup-id fluxgui
+exec --no-startup-id rescuetime
+
 #exec --no-startup-id odrive-unofficial
-#exec --no-startup-id fluxgui
 #
 # Xinput
 # xinput list
@@ -122,6 +125,8 @@ bindsym $mod+q kill
 bindsym $mod+d exec "rofi -color-normal '#c6c8c6,#1e1f29,#c6c8c6,#eee8d5,#eee8d6' -modi combi -combi-modi drun,run,ssh -show combi -show-icons -width 35 -lines 7"
 bindsym $mod+i exec "echo '' | rofi -dmenu -p 'Google Search' -width 30 -lines 0 | xargs -I{} xdg-open https://www.google.com/search?q={}"
 # google search rofi
+
+bindsym $mod+space exec --no-startup-id ~/scripts/zzzfoo.sh -r="-location 3 -width 50 -lines 6" -e="-mime:message/rfc822" -o xdg-open
 
 # there also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. it is a wrapper around dmenu, so you need that

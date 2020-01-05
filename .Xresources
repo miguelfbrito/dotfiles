@@ -1,4 +1,4 @@
-Xft.dpi:        130
+Xft.dpi:        110
 Xft.antialias:  1 
 Xft.lcdfilfer:  lcddefault
 Xft.rgba:       rgb
@@ -71,10 +71,11 @@ URxvt.scrollBar:        false
 URxvt.internalBorder:   15
 URxvt.saveLines:        1000
 
-URxvt.font:       xft:Iosevka:size=12:style=Medium:antialias=true,xft:monospace
-URxvt.boldFont:   xft:Iosevka:size=12:style=Semibold:antialias=true,xft:monospace
-URxvt.italicFont: xft:Iosevka:size=12:style=Oblique:antialias=true,xft:monospace
-URxvt.letterSpace: 0 
+URxvt.font:       xft:Iosevka:size=11:style=Medium:antialias=true,xft:monospace
+URxvt.boldFont:   xft:Iosevka:size=11:style=Semibold:antialias=true,xft:monospace
+URxvt.italicFont: xft:Iosevka:size=11:style=Oblique:antialias=true,xft:monospace
+URxvt.letterSpace: -0.5 
+URxvt.lineSpace: 3
 
 ! plugins
 URxvt.perl-ext-common:  ...,font-size,keyboard-select
