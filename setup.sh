@@ -18,7 +18,7 @@ ln -s $DIR/.vimrc ~/.vimrc
 ln -s $DIR/.config/terminator/ ~/.config/terminator
 
 ln -s $DIR/i3 ~/.config/i3/
-ln -s $DIR/i3blocks ~/.config
+# ln -s $DIR/i3blocks ~/.config
 
 echo "Diretorio $DIR"
 

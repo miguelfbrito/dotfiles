@@ -15,12 +15,6 @@ alias i3cfg="vim ${DOTFILES}/.config/i3/config"
 alias polycfg="vim ${DOTFILES}/.config/polybar/config"
 alias xres="vim ${DOTFILES}/.Xresources; xrdb -merge ~/.Xresources"
 
-t() { nohup thunar . > /dev/null 2>&1 & } 
-th() { nohup thunar . > /dev/null 2>&1 & } 
-thu() { nohup thunar . > /dev/null 2>&1 & } 
-thun() { nohup thunar . > /dev/null 2>&1 & } 
-thunar() { nohup thunar . > /dev/null 2>&1 & } 
-
 alias copy="xclip -sel clipboard"
 alias no="vim ~/vimwiki/index.md"
 
@@ -353,3 +347,7 @@ google()
 
 # eval $(/bin/brew shellenv)
 # eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+

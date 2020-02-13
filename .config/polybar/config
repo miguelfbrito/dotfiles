@@ -26,8 +26,10 @@ foreground-alt = #555
 ;primary = #2e3436
 primary = #1e1f29
 
-secondary = #DBA11A
-secondary-soft = #DDC485
+;secondary = #DBA11A
+secondary = ${xrdb:secondary}
+secondary-soft = ${xrdb:secondary}
+;secondary-soft = #DDC485
 
 alert = #bd2c40
 white = #fff
