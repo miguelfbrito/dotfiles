@@ -1,0 +1,21 @@
+[global_config]
+  borderless = True
+  inactive_color_offset = 1.0
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+[keybindings]
+[profiles]
+  [[default]]
+    font = Mono 14
+    background_color = "#0f111a"
+    cursor_color = "#ffcc00"
+    cursor_color_fg = False
+    foreground_color = "#8f93a2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+   palette = "#2e3436:#ff5370:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#d3d7cf:#555753:#f07178:#c3e88d:#f78c6c:#729fcf:#bb80b3:#89ddff:#eeeeec"
+    use_system_font = False
+    copy_on_selection = True
+    use_custom_command = True
+    custom_command = "tmux new"
+[plugins]

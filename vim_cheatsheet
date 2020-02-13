@@ -1,0 +1,10 @@
+:h jumplist   => information about moving around
+
+mx      => creates mark X 
+'x      => jumps to beggining of line at x
+`x      => jumps to position of mark x
+
+%       => jumps to corresponding item (eg. ( => ), { => } )
+<c-o>   => 
+<c-i>   =>
+
