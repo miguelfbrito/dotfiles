@@ -4,16 +4,14 @@ export EDITOR='vim'
 export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk-amd64'
 export PATH=~/.local/bin:$PATH:~/.npm:~/.npm/bin:$JAVA_HOME:~/scripts
 
-DOTFILES='~/dotfiles'
-
 alias dotf="cd ~/dotfiles"
-alias bashrc="vim ${DOTFILES}/.bashrc && source ${DOTFILES}/.bashrc"
-alias tmuxconf="vim ${DOTFILES}/.tmux.conf"
+alias bashrc="vim ~/.bashrc && source ~/.bashrc"
+alias tmuxconf="vim ~/.tmux.conf"
 alias kmux="pkill -f tmux"
-alias vimrc="vim ${DOTFILES}/.vimrc"
-alias i3cfg="vim ${DOTFILES}/.config/i3/config"
-alias polycfg="vim ${DOTFILES}/.config/polybar/config"
-alias xres="vim ${DOTFILES}/.Xresources; xrdb -merge ~/.Xresources"
+alias vimrc="vim ~/.vimrc"
+alias i3cfg="vim ~/.config/i3/config"
+alias polycfg="vim ~/.config/polybar/config"
+alias xres="vim ~/.Xresources; xrdb -merge ~/.Xresources"
 
 alias copy="xclip -sel clipboard"
 alias no="vim ~/vimwiki/index.md"
@@ -348,6 +346,6 @@ google()
 # eval $(/bin/brew shellenv)
 # eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
-alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dof='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 
