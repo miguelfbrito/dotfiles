@@ -1,43 +1,15 @@
-Xft.dpi:        110
+Xft.dpi:        120
 Xft.antialias:  1 
 Xft.lcdfilfer:  lcddefault
 Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
-! rofi
-!
-!
-!c5c8c6
-!rofi.fg:                             #c5c8c6
-!rofi.bg:                             #c5c8c6
-!rofi.fg-active:                      #34405a
-!rofi.fg-urgent:                      #34405a
-!rofi.hlfg-active:                    #5e73a0
-!rofi.hlfg-urgent:                    #5e73a0
-!rofi.bg-active:                      #34405a
-!rofi.bg-urgent:                      #34405a
-!rofi.hlbg-active:                    #5d729f
-!rofi.hlbg-urgent:                    #5d729f
-!rofi.bgalt:                          #5671a0
-!rofi.hlfg:                           #34405a
-!rofi.hlbg:                           #34405a
-!rofi.bc:                             #789ee1
-! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
-rofi.color-normal: #c5c8c6,  #c5c8c6,  #353944,  #c5c8c6,  #FFFFFF
-!rofi.color-urgent: #002b36
-!rofi.color-active: #002b36
-rofi.font: Ubuntu 14
-rofi.color-window: #353944,      #404552
-
 ! special
 *.foreground:   #c5c8c6
 *.background:   #1e1f29
 *.cursorColor:  #d2d4d2
 *.secondary:    #63A290
-! *.secondary:    #68ACE2
-!*.secondary:    #a1a1a1
-! #1368d1
 
 ! black
 *.color0:       #1d1f21

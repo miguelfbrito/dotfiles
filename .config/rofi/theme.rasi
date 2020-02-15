@@ -34,8 +34,8 @@
     padding:          8;
 }
 #mainbox {
-    border:  0;
-    padding: 0;
+    border: 0;
+    padding: 25px;
 }
 #message {
     border:       2px dash 0px 0px;
@@ -49,13 +49,13 @@
     fixed-height: 0;
     border:       0;
     border-color: @separatorcolor;
-    spacing:      2px;
+    spacing:      5px;
     scrollbar:    false;
     padding:      0px 0px 0px;
 }
 #element {
     border:  0;
-    padding: 1px;
+    padding: 3px;
 }
 #element.normal.normal {
     background-color: @normal-background;
