@@ -10,14 +10,15 @@
 # pavucontrol - manage audio devices
 # autorandr - auto detect docked devices and adjust xrandr (autorandr --save [docked|mobile])
 #
+#
 
 title_align center
 new_window normal 0
 for_window [class="^.*"] border pixel 2
 
 # gaps vertical 0 4.17 only
-gaps inner 15 
-gaps outer 0
+gaps inner 20 
+gaps outer 5
 
 smart_gaps on
 smart_borders on
@@ -42,8 +43,10 @@ exec --no-startup-id tusk
 exec --no-startup-id fluxgui
 exec --no-startup-id rescuetime
 
-#exec --no-startup-id odrive-unofficial
-#
+
+# Read colors from .Xresources ($variable, fallback)
+set_from_resource $secondary secondary #000
+
 # Xinput
 # xinput list
 # xinput list-props <device-id>
@@ -268,13 +271,13 @@ set $color_bright_gray   #3c3836
 set $color_bright_yellow #f99921
 set $color_normal_black  #282828
 set $color_unused        #ff0000
-set $color_test          #1368d1
+# set $color_test          $secondary
 set $color_test2         #946f29
 set $color_black         #000000
 
 #colors                  border                 background             text                   indicator       child_border
-#client.focused            $color_test            $color_bright_gray     $color_bright_white    $color_bright_white   $color_normal_white
-client.focused            $color_test            $color_test2           $color_black           $color_test     $color_test 
+#client.focused            $secondary            $color_bright_gray     $color_bright_white    $color_bright_white   $color_normal_white
+client.focused            $secondary             $secondary             $color_black           $secondary      $secondary 
 client.focused_inactive   $color_bright_gray     $color_bright_gray     $color_bright_white    $color_unused   $color_normal_black
 client.unfocused          $color_normal_gray     $color_normal_gray     $color_normal_white    $color_unused   $color_normal_black
 client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused   $color_unused

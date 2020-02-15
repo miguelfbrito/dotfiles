@@ -34,8 +34,10 @@ rofi.color-window: #353944,      #404552
 *.foreground:   #c5c8c6
 *.background:   #1e1f29
 *.cursorColor:  #d2d4d2
-
-*.secondary:    #1368d1
+*.secondary:    #63A290
+! *.secondary:    #68ACE2
+!*.secondary:    #a1a1a1
+! #1368d1
 
 ! black
 *.color0:       #1d1f21
