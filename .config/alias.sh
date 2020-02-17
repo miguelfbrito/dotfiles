@@ -7,7 +7,7 @@ alias kmux="pkill -f tmux"
 alias vimrc="vim ~/.vimrc"
 alias i3cfg="vim ~/.config/i3/config"
 alias polycfg="vim ~/.config/polybar/config"
-alias xres="vim ~/.Xresources; xrdb -merge ~/.Xresources"
+alias xres="vim ~/.Xresources; xrdb merge ~/.Xresources"
 alias copy="xclip -sel clipboard"
 alias no="vim ~/vimwiki/index.md"
 alias r='ranger --choosedir=$HOME/.rangerdir; cd "$(cat $HOME/.rangerdir)"'

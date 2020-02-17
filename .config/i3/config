@@ -17,8 +17,8 @@ new_window normal 0
 for_window [class="^.*"] border pixel 1
 
 # gaps vertical 0 4.17 only
-gaps inner 20 
-gaps outer 5
+gaps inner 15 
+gaps outer 0
 
 smart_gaps on
 smart_borders on
@@ -125,7 +125,7 @@ bindsym $mod+t [instance=$floating_terminal]  scratchpad show, resize set 800 35
 bindsym $mod+q kill
 
 # ROFI (-combi-mode window)
-bindsym $mod+d exec "rofi  -modi combi -combi-modi drun,run,ssh -show combi -show-icons -width 35 -lines 7"
+bindsym $mod+d exec "rofi  -modi combi -combi-modi drun,run,ssh -show combi -show-icons"
 bindsym $mod+i exec "echo '' | rofi -dmenu -p 'Google Search' -width 30 -lines 0 | xargs -I{} xdg-open https://www.google.com/search?q={}"
 # google search rofi
 

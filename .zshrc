@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:~/.npm-global/bin:$PATH
 export EDITOR='vim'
 
 # Path to your oh-my-zsh installation.
@@ -57,3 +57,5 @@ export KEYTIMEOUT=20
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
