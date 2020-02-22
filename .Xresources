@@ -1,4 +1,4 @@
-Xft.dpi:        110
+Xft.dpi:        130
 Xft.antialias:  1 
 Xft.lcdfilfer:  lcddefault
 Xft.rgba:       rgb
@@ -52,8 +52,8 @@ URxvt.font:       xft:UbuntuMono:style=Regular:size=12:antialias=true
 !URxvt.font:       xft:Ubuntu Mono:size=12:style=Regular:antialias=true,xft:monospace
 !URxvt.boldFont:   xft:Iosevka:size=11:style=Semibold:antialias=true,xft:monospace
 !URxvt.italicFont: xft:Iosevka:size=11:style=Oblique:antialias=true,xft:monospace
-URxvt.letterSpace: 0 
-URxvt.lineSpace: 2
+URxvt.letterSpace: 0.5
+URxvt.lineSpace: 3
 
 ! plugins
 URxvt.perl-ext-common:  ...,font-size,keyboard-select

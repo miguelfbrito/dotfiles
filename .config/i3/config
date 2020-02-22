@@ -17,8 +17,8 @@ new_window normal 0
 for_window [class="^.*"] border pixel 1
 
 # gaps vertical 0 4.17 only
-gaps inner 15 
-gaps outer 0
+gaps inner 20
+gaps outer 5
 
 smart_gaps on
 smart_borders on
@@ -278,10 +278,10 @@ set $color_black         #000000
 #colors                  border                 background             text                   indicator       child_border
 #client.focused            $secondary            $color_bright_gray     $color_bright_white    $color_bright_white   $color_normal_white
 client.focused            $secondary             $secondary             $color_black           $secondary      $secondary 
-client.focused_inactive   $color_bright_gray     $color_bright_gray     $color_bright_white    $color_unused   $color_normal_black
-client.unfocused          $color_normal_gray     $color_normal_gray     $color_normal_white    $color_unused   $color_normal_black
-client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused   $color_unused
-client.placeholder        $color_unused          $color_normal_black    $color_unused          $color_unused   $color_unused
+#client.focused_inactive   $color_bright_gray     $color_bright_gray     $color_bright_white    $color_unused   $color_normal_black
+#client.unfocused          $color_normal_gray     $color_normal_gray     $color_normal_white    $color_unused   $color_normal_black
+#client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused   $color_unused
+#client.placeholder        $color_unused          $color_normal_black    $color_unused          $color_unused   $color_unused
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh

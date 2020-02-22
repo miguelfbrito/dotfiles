@@ -14,6 +14,9 @@ nnoremap K <C-u>
 nnoremap H gT
 nnoremap L gt
 
+" Append date at end of line
+nnoremap <F5> A<C-r>=strftime(" `(%H:%M %d/%m/%y)`")<CR><Esc>
+
 " save on <c-s>
 nmap <c-s> :w<cr>
 imap <c-s> <esc>:w<cr>a

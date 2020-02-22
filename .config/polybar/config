@@ -65,14 +65,15 @@ font-1 = FontAwesome:style=Solid:size=10;0
 font-2 = "Font Awesome 5 Pro:style=Solid:size=10;2"
 
 modules-left = i3
-modules-center = date
-modules-right = pulseaudio xbacklight battery powermenu
+modules-center =
+modules-right = pulseaudio xbacklight battery date powermenu
 modules-format = 0
 ; memory cpu temperature
 
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
+
 
 ;wm-restack = bspwm
 
@@ -204,7 +205,8 @@ label = %time% %date%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume =  %percentage%%
+label-volume =  %percentage%% 
+
 label-volume-foreground = ${root.foreground}
 
 label-muted =  0%
