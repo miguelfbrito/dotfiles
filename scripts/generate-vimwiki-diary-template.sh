@@ -6,26 +6,16 @@ import datetime
 template = """# {date}
 
 ## Daily Checklist
-
-1.
-2.
+- [ ] LeetCode April Challenge
 
 ## Goals
+- [ ] 4h
+    - [ ] Pomodoro 1 (50:10)
+    - [ ] Pomodoro 2 (50:10)
+    - [ ] Pomodoro 3 (50:10)
+    - [ ] Pomodoro 4 (50:10)
+    - [ ] Pomodoro 5 (50:10)
 
-## Notes
-
-## Fun
-
-## Work log
-
-| Start | End | Time | #Todo | Prod | Happ |
-|-------|-----|------|-------|------|------|
-|       |     |      |       |      |      |
-|       |     |      |       |      |      |
-
-Total: 
-
-## End of day review
 """
 
 date = (datetime.date.today() if len(sys.argv) < 2

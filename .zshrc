@@ -1,5 +1,7 @@
-export PATH=$HOME/bin:/usr/local/bin:~/.npm-global/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:~/.npm-global/bin:$PATH:~/.local/bin
 export EDITOR='vim'
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/mbrito/.oh-my-zsh"
@@ -26,7 +28,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Vi-mode
 bindkey "jk" vi-cmd-mode
-export KEYTIMEOUT=20
+export KEYTIMEOUT=10
 
 
 # Uncomment the following line to use hyphen-insensitive completion.

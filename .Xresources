@@ -44,27 +44,25 @@ Xft.hintstyle:  hintfull
 *.color7:       #c5c8c6
 *.color15:      #ffffff
 
+URxvt.perl-lib: /home/mbrito/.config/urxvt/extensions/
 URxvt.scrollBar:        false
 URxvt.internalBorder:   15
 URxvt.saveLines:        1000
 
-URxvt.font:       xft:UbuntuMono:style=Regular:size=12:antialias=true
-!URxvt.font:       xft:Ubuntu Mono:size=12:style=Regular:antialias=true,xft:monospace
-!URxvt.boldFont:   xft:Iosevka:size=11:style=Semibold:antialias=true,xft:monospace
-!URxvt.italicFont: xft:Iosevka:size=11:style=Oblique:antialias=true,xft:monospace
-URxvt.letterSpace: 0.5
-URxvt.lineSpace: 3
+URxvt.font:       xft:UbuntuMono:style=Regular:size=11:antialias=true,xft:monospace
+URxvt.letterSpace: -1
+URxvt.lineSpace: 7 
 
 ! plugins
-URxvt.perl-ext-common:  ...,font-size,keyboard-select
+URxvt.perl-ext-common:  ...,font-size,keyboard-select,searchable-scrollback
 URxvt.keysym.Shift-Control-Up:     perl:font-size:increase
 URxvt.keysym.Shift-Control-Down:   perl:font-size:decrease
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt.keyboard-select.clipboard: true
 
-!URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-!URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+!URxvt.keysym.Control-V: eval:paste_clipboard
+!URxvt.keysym.Control-C: eval:selection_to_clipboard
 !URxvt.keysym.Control-Meta-c: builtin-string:
 !URxvt.keysym.Control-Meta-v: builtin-string:
 

@@ -3,6 +3,7 @@
 "
 
 set nocompatible
+set hlsearch
 filetype plugin indent on
 syntax on 
 
@@ -17,6 +18,10 @@ nnoremap L gt
 " Append date at end of line
 nnoremap <F5> A<C-r>=strftime(" `(%H:%M %d/%m/%y)`")<CR><Esc>
 
+" Add '---' above line. Using it as separator for better readibility of md
+" documents
+nnoremap <F4> O------------------------------------------<Esc>
+
 " save on <c-s>
 nmap <c-s> :w<cr>
 imap <c-s> <esc>:w<cr>a
@@ -26,8 +31,6 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-" Execute shell script
-map <C-x> :! sh ./% <CR>
 
 set number relativenumber
 set autoindent

@@ -4,3 +4,6 @@ search config
 search .config
 search Image
 search mei
+mkdir clustering
+rename quantitatively_measuring_object_oriented_couplings.pdf
+rename coogle_detecting_similar_java_classes_using_trees.pdf

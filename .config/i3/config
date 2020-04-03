@@ -17,8 +17,8 @@ new_window normal 0
 for_window [class="^.*"] border pixel 1
 
 # gaps vertical 0 4.17 only
-gaps inner 20
-gaps outer 5
+gaps inner 15 
+gaps outer 0
 
 smart_gaps on
 smart_borders on
@@ -223,7 +223,9 @@ for_window [class="Spotify"] move to workspace $ws10
 for_window [class="discord"] move to workspace $ws9 
 for_window [class="code"] move to workspace $ws3 
 for_window [class="Code"] move to workspace $ws3 
+for_window [class="jetbrains-idea"] move to workspace $ws3 
 for_window [class="jetbrains-idea-ce"] move to workspace $ws3 
+for_window [class="Gimp-2.10"] move to workspace $ws4 
 for_window [class="Arandr"] floating enable
 
 
