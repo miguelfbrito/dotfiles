@@ -16,6 +16,11 @@ template = """# {date}
     - [ ] Pomodoro 4 (50:10)
     - [ ] Pomodoro 5 (50:10)
 
+## NOT To Do
+- [ ] Avoid time on social media
+- [ ] Do not spend too much time on my phone
+- [ ] Avoid highly stimulation activities
+
 """
 
 date = (datetime.date.today() if len(sys.argv) < 2

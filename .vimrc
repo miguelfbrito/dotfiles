@@ -90,11 +90,15 @@ Plug 'honza/vim-snippets'
 
 call plug#end()
 
-" Vimwiki
+" Vimwiki ✗○◐●✓
 let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-" ✗○◐●✓
 let g:vimwiki_listsyms = ' ○◐●✓'
-" let g:vimwiki_folding = 'expr'
+autocmd BufRead,BufNewFile *.md setlocal shiftwidth=2 tabstop=2
+"autocmd FileType md setlocal shiftwidth=2 tabstop=2
+
+nnoremap <leader>wn :VimwikiDiaryNext<CR>
+nnoremap <leader>wp :VimwikiDiaryPrevDay<CR>
+" nnoremap <silent> <leader>wt :e ~/vimwiki/todos.md<CR>
 
 " Opens new Vimwiki diary page from calendar
 autocmd FileType calendar nmap <buffer> <CR> :<C-u>call vimwiki#diary#calendar_action(b:calendar.day().get_day(), b:calendar.day().get_month(), b:calendar.day().get_year(), b:calendar.day().week(), "V")<CR>

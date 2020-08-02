@@ -17,7 +17,7 @@ alias py="/usr/bin/python3"
 alias python="/usr/bin/python3"
 alias vps="ssh vps"
 
-alias th="cd ~/git/thesis/app"
+alias th="cd ~/git/thesis/"
 alias t="taskell ~/vimwiki/taskell.md"
 alias ta="taskell ~/vimwiki/taskell.md"
 

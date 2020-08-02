@@ -1,7 +1,6 @@
 export PATH=$HOME/bin:/usr/local/bin:~/.npm-global/bin:$PATH:~/.local/bin
 export EDITOR='vim'
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/mbrito/.oh-my-zsh"

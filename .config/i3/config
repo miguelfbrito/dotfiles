@@ -32,17 +32,18 @@ smart_borders on
 # https://www.reddit.com/r/i4wm/comments/6vuen9/add_desktop_apps_to_dmenu/
 
 # Startup 
+exec --no-startup-id autorandr --change --force
 exec_always --no-startup-id xset r rate 200 45  #keyboard letter speed
 exec --no-startup-id ~/.config/dunst/reload
 #exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
-exec --no-startup-id compton -cCGb --backend glx --vsync opengl --config ~/.config/compton.conf
+#exec --no-startup-id compton -cCGb --backend glx --vsync opengl --config ~/.config/compton.conf
 exec --no-startup-id indicator-cpufreq
-exec --no-startup-id tusk
 exec --no-startup-id fluxgui
 exec --no-startup-id rescuetime
-
+#exec --no-startup-id lotion
+#exec --no-startup-id todoist
 
 # Read colors from .Xresources ($variable, fallback)
 set_from_resource $secondary secondary #000
@@ -223,6 +224,8 @@ for_window [class="Spotify"] move to workspace $ws10
 for_window [class="discord"] move to workspace $ws9 
 for_window [class="code"] move to workspace $ws3 
 for_window [class="Code"] move to workspace $ws3 
+for_window [class="lotion"] move to workspace $ws4 
+for_window [class="gitkraken"] move to workspace $ws4
 for_window [class="jetbrains-idea"] move to workspace $ws3 
 for_window [class="jetbrains-idea-ce"] move to workspace $ws3 
 for_window [class="Gimp-2.10"] move to workspace $ws4 
@@ -274,16 +277,18 @@ set $color_bright_yellow #f99921
 set $color_normal_black  #282828
 set $color_unused        #ff0000
 # set $color_test          $secondary
-set $color_test2         #946f29
+set $color_test2         #bf9237
 set $color_black         #000000
 
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
 #colors                  border                 background             text                   indicator       child_border
-#client.focused            $secondary            $color_bright_gray     $color_bright_white    $color_bright_white   $color_normal_white
-client.focused            $secondary             $secondary             $color_black           $secondary      $secondary 
-#client.focused_inactive   $color_bright_gray     $color_bright_gray     $color_bright_white    $color_unused   $color_normal_black
-#client.unfocused          $color_normal_gray     $color_normal_gray     $color_normal_white    $color_unused   $color_normal_black
-#client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused   $color_unused
-#client.placeholder        $color_unused          $color_normal_black    $color_unused          $color_unused   $color_unused
+client.focused            $color_test2            $color_bright_gray     $color_bright_white    $color_bright_white   $color_test2
+# client.focused_inactive   $color_bright_gray     $color_bright_gray     $color_bright_white    $color_unused   $color_normal_black
+# client.unfocused          $color_normal_gray     $color_normal_gray     $color_normal_white    $color_unused   $color_normal_black
+# client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused   $color_unused
+# client.placeholder        $color_unused          $color_normal_black    $color_unused          $color_unused   $color_unused
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh

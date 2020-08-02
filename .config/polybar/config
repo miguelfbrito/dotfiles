@@ -19,17 +19,12 @@
 [colors]
 background = ${xrdb:background}
 background-alt = #444
-foreground = ${xrdb:foreground}
+foreground = ${xrdb:secondary}
 foreground-alt = #555
 
-;primary = #242F40
-;primary = #2e3436
 primary = ${xrdb:background}
-
-;secondary = #DBA11A
 secondary = ${xrdb:secondary}
-secondary-soft = ${xrdb:secondary}
-;secondary-soft = #DDC485
+secondary-soft = ${xrdb:foreground}
 
 alert = #bd2c40
 white = #fff
@@ -42,14 +37,14 @@ height = 30
 ;offset-y = 0
 radius = 0.0
 fixed-center = true
-bottom = true
+bottom = false
 
 background = ${colors.primary}
 ;${colors.background}
 foreground = ${colors.secondary}
 
 line-size = 2
-line-color = 
+line-color = ${colors.secondary}
 
 ;border-top-size = 0
 ;border-color = ${colors.secondary}
@@ -101,22 +96,23 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 0
 label-mode-foreground = ${colors.primary}
 label-mode-background = ${colors.secondary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-foreground = ${colors.primary} 
-label-focused-background = ${colors.secondary}
+label-focused-foreground = ${colors.secondary} 
+; ${colors.secondary}
+label-focused-background =
 ;label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.primary}
-label-focused-padding = 2
+label-focused-underline = ${colors.secondary}
+label-focused-padding = 3
 
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 2
+label-unfocused-padding = 3
 label-unfocused-foreground = ${colors.secondary}
 label-unfocused-background = ${colors.primary}
 
@@ -130,7 +126,7 @@ label-visible-padding = ${self.label-focused-padding}
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 3
 
 ; Separator in between workspaces
 ; label-separator = |

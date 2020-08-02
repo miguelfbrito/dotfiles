@@ -1,4 +1,4 @@
-Xft.dpi:        130
+Xft.dpi:        116
 Xft.antialias:  1 
 Xft.lcdfilfer:  lcddefault
 Xft.rgba:       rgb
@@ -6,11 +6,11 @@ Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
 ! special
-*.foreground:   #c5c8c6
-!*.background:   #1e1f29
+*.cursorColor:  #ebebed
+*.foreground:   #b7b6d1
 *.background:   #10111a
-*.cursorColor:  #d2d4d2
-*.secondary:    #63A290
+
+*.secondary:    #e0a824
 
 ! black
 *.color0:       #1d1f21
@@ -47,11 +47,14 @@ Xft.hintstyle:  hintfull
 URxvt.perl-lib: /home/mbrito/.config/urxvt/extensions/
 URxvt.scrollBar:        false
 URxvt.internalBorder:   15
-URxvt.saveLines:        1000
+URxvt.saveLines:        2000
 
-URxvt.font:       xft:UbuntuMono:style=Regular:size=11:antialias=true,xft:monospace
-URxvt.letterSpace: -1
-URxvt.lineSpace: 7 
+!URxvt.font:       xft:Iosevka:style=Regular:size=11:antialias=true 
+
+URxvt.font: xft:SourceCodePro:size=9:antialias=true,xft:monospace 
+URxvt.letterSpace: 0
+URxvt.lineSpace: 4
+
 
 ! plugins
 URxvt.perl-ext-common:  ...,font-size,keyboard-select,searchable-scrollback
@@ -68,3 +71,4 @@ URxvt.keyboard-select.clipboard: true
 
 URxvt.iso14755:         false
 URxvt.iso14755_52:      false
+URxvt.termName:         rxvt-unicode
