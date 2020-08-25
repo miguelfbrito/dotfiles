@@ -17,7 +17,7 @@ new_window normal 0
 for_window [class="^.*"] border pixel 1
 
 # gaps vertical 0 4.17 only
-gaps inner 15 
+gaps inner 8
 gaps outer 0
 
 smart_gaps on
@@ -35,15 +35,14 @@ smart_borders on
 exec --no-startup-id autorandr --change --force
 exec_always --no-startup-id xset r rate 200 45  #keyboard letter speed
 exec --no-startup-id ~/.config/dunst/reload
-#exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
-#exec --no-startup-id compton -cCGb --backend glx --vsync opengl --config ~/.config/compton.conf
+exec --no-startup-id nextcloud
 exec --no-startup-id indicator-cpufreq
 exec --no-startup-id fluxgui
 exec --no-startup-id rescuetime
-#exec --no-startup-id lotion
-#exec --no-startup-id todoist
+exec --no-startup-id compton -cCGb --backend glx --vsync opengl --config ~/.config/compton.conf
+#exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
 
 # Read colors from .Xresources ($variable, fallback)
 set_from_resource $secondary secondary #000
@@ -80,7 +79,9 @@ bindsym $mod2+$right workspace next
 bindsym $mod+Left workspace prev
 bindsym $mod+Right workspace next
 
+# Shortcut to open ranger (file manager/explorer)
 bindsym $mod+x exec --no-startup-id urxvt -e "ranger"
+bindsym $mod+p exec --no-startup-id urxvt -e "ranger"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -330,8 +331,6 @@ bindsym $mod+Ctrl+Down move workspace to output down
 
 
 
-# Shortcut to open ranger (file manager/explorer)
-bindsym $mod+p exec gnome-terminal -e "bash -c \"ranger\""
 
 # Printsreen
 bindsym Shift+Print exec shutter -s

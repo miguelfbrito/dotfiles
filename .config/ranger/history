@@ -1,6 +1,3 @@
-search final
-search sorted
-search pdfq
 search topic_mode
 search package
 search agilefant
@@ -43,8 +40,11 @@ search skyisbu
 search icode
 search metric
 search Metric
-delete
 rename Metric_analysis.pdf
 search 
 search kamim
 search ch
+search merged
+open_with m 
+search merge
+delete

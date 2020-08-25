@@ -1,48 +1,56 @@
-Xft.dpi:        116
+Xft.dpi:        125
 Xft.antialias:  1 
 Xft.lcdfilfer:  lcddefault
 Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
-! special
-*.cursorColor:  #ebebed
-*.foreground:   #b7b6d1
-*.background:   #10111a
+URxvt.highlightColor: #bdbdbd
+URxvt.highlighTextColor: #424242
 
+! PREVIOUSLY USED
+! special
+!*.cursorColor:  #ebebed
+!*.foreground:   #b7b6d1
+!*.background:   #10111a
 *.secondary:    #e0a824
 
+! special
+*.foreground:   #e3f4ff
+*.background:   #0e1011
+*.cursorColor:  #e3f4ff
+
 ! black
-*.color0:       #1d1f21
-*.color8:       #969896
+*.color0:       #1b2021
+*.color8:       #a2e00e
 
 ! red
-*.color1:       #cc342b
-*.color9:       #cc342b
+*.color1:       #006284
+*.color9:       #cea0f9
 
 ! green
-*.color2:       #198844
-*.color10:      #198844
+*.color2:       #cfcfcf
+*.color10:      #8bc70d
 
 ! yellow
-*.color3:       #fba922
-*.color11:      #fba922
+*.color3:       #95c6ec
+*.color11:      #fcc08a
 
 ! blue
-*.color4:       #3971ed
-*.color12:      #3971ed
+*.color4:       #62696d
+*.color12:      #006fa8
 
 ! magenta
-*.color5:       #a36ac7
-*.color13:      #a36ac7
+*.color5:       #838d92
+*.color13:      #fd9bc4
 
 ! cyan
-*.color6:       #3971ed
-*.color14:      #3971ed
+*.color6:       #aab6bc
+*.color14:      #a96016
 
 ! white
-*.color7:       #c5c8c6
-*.color15:      #ffffff
+*.color7:       #dee3e6
+*.color15:      #005171
 
 URxvt.perl-lib: /home/mbrito/.config/urxvt/extensions/
 URxvt.scrollBar:        false
@@ -51,8 +59,8 @@ URxvt.saveLines:        2000
 
 !URxvt.font:       xft:Iosevka:style=Regular:size=11:antialias=true 
 
-URxvt.font: xft:SourceCodePro:size=9:antialias=true,xft:monospace 
-URxvt.letterSpace: 0
+URxvt.font: xft:SourceCodePro:style=Medium:size=9
+URxvt.letterSpace: 0 
 URxvt.lineSpace: 4
 
 

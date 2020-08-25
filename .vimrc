@@ -1,6 +1,8 @@
 " Ubuntu Setup: vim-gnome package to get ubuntu support for clipboard copy
-"
-"
+
+" Colorscheme
+" highlight visual mode
+highlight Visual cterm=NONE ctermbg=0 ctermfg=NONE guibg=Grey40 
 
 set nocompatible
 set hlsearch
@@ -8,6 +10,12 @@ filetype plugin indent on
 syntax on 
 
 let mapleader="\<Space>"
+" Markdown-preview
+nnoremap <leader>md :MarkdownPreview<CR>
+
+" Vimwiki
+nnoremap <leader>wn :VimwikiDiaryNext<CR>
+nnoremap <leader>wp :VimwikiDiaryPrevDay<CR>
 
 inoremap jk <Esc>
 nnoremap J <C-d>
@@ -17,10 +25,6 @@ nnoremap L gt
 
 " Append date at end of line
 nnoremap <F5> A<C-r>=strftime(" `(%H:%M %d/%m/%y)`")<CR><Esc>
-
-" Add '---' above line. Using it as separator for better readibility of md
-" documents
-nnoremap <F4> O------------------------------------------<Esc>
 
 " save on <c-s>
 nmap <c-s> :w<cr>
@@ -74,30 +78,23 @@ endif
 " Plugins
 Plug 'junegunn/fzf', {'dir': '~/.fzf/', 'do': './install -all'}
 Plug 'junegunn/fzf.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'vimwiki/vimwiki'
 Plug 'itchyny/calendar.vim'
 Plug 'lervag/vimtex'
 Plug 'scrooloose/nerdtree'
 Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-speeddating'
-
-" snippets
-" Track the engine.
 Plug 'SirVer/ultisnips'
-" Snippets are separated from the engine. Add this if you want them:
-Plug 'honza/vim-snippets'
-
-
+Plug 'honza/vim-snippets' " Snippets are separated from the engine. Add this if you want them:
 call plug#end()
 
 " Vimwiki ✗○◐●✓
-let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/nextcloud/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_listsyms = ' ○◐●✓'
+" let g:vimwiki_folding='expr'
 autocmd BufRead,BufNewFile *.md setlocal shiftwidth=2 tabstop=2
 "autocmd FileType md setlocal shiftwidth=2 tabstop=2
-
-nnoremap <leader>wn :VimwikiDiaryNext<CR>
-nnoremap <leader>wp :VimwikiDiaryPrevDay<CR>
 " nnoremap <silent> <leader>wt :e ~/vimwiki/todos.md<CR>
 
 " Opens new Vimwiki diary page from calendar
