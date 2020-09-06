@@ -3,9 +3,9 @@
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
-#
-# 4.17 i3 i think
-# border_radius 10
+
+# Installing i3-radius https://en.terminalroot.com.br/how-to-install-i3-gaps-with-rounded-corners/
+border_radius 15 
 #
 # pavucontrol - manage audio devices
 # autorandr - auto detect docked devices and adjust xrandr (autorandr --save [docked|mobile])
