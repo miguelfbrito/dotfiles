@@ -14,11 +14,11 @@
 
 title_align center
 new_window normal 0
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 
 # gaps vertical 0 4.17 only
-gaps inner 8
-gaps outer 0
+gaps inner 15
+gaps outer 5
 
 smart_gaps on
 smart_borders on
@@ -41,6 +41,7 @@ exec --no-startup-id nextcloud
 exec --no-startup-id indicator-cpufreq
 exec --no-startup-id fluxgui
 exec --no-startup-id rescuetime
+exec --no-startup-id ./joplin/Joplin.AppImage
 exec --no-startup-id compton -cCGb --backend glx --vsync opengl --config ~/.config/compton.conf
 #exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
 
