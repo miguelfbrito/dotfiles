@@ -1,4 +1,4 @@
-Xft.dpi:        125
+Xft.dpi:        110
 Xft.antialias:  1
 Xft.lcdfilfer:  lcddefault
 Xft.rgba:       rgb
@@ -7,6 +7,7 @@ Xft.hintstyle:  hintslight
 
 URxvt.highlightColor: #bdbdbd
 URxvt.highlighTextColor: #424242
+
 
 ! PREVIOUSLY USED
 ! special
@@ -55,11 +56,11 @@ URxvt.highlighTextColor: #424242
 URxvt.perl-lib: /home/mbrito/.config/urxvt/extensions/
 URxvt.scrollBar:        false
 URxvt.internalBorder:   15
-URxvt.saveLines:        2000
+URxvt.saveLines:        500000
 
 !URxvt.font:       xft:Iosevka:style=Regular:size=11:antialias=true 
 
-URxvt.font: xft:SourceCodePro:style=SemiBold:size=11
+URxvt.font: xft:SourceCodePro:style=SemiBold:size=10
 URxvt.letterSpace: 0 
 URxvt.lineSpace: 4
 

@@ -17,8 +17,8 @@ new_window normal 0
 for_window [class="^.*"] border pixel 0
 
 # gaps vertical 0 4.17 only
-gaps inner 15
-gaps outer 5
+gaps inner 10 
+gaps outer 0
 
 smart_gaps on
 smart_borders on
@@ -42,7 +42,9 @@ exec --no-startup-id indicator-cpufreq
 exec --no-startup-id fluxgui
 exec --no-startup-id rescuetime
 exec --no-startup-id ./joplin/Joplin.AppImage
-exec --no-startup-id compton -cCGb --backend glx --vsync opengl --config ~/.config/compton.conf
+exec --no-startup-id compton --config ~/.config/compton.conf
+
+
 #exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
 
 # Read colors from .Xresources ($variable, fallback)
@@ -223,6 +225,7 @@ bindsym $mod+ctrl+4 move container to workspace $ws4; workspace $ws4
 
 for_window [class="spotify"] move to workspace $ws10
 for_window [class="Spotify"] move to workspace $ws10 
+for_window [class="Joplin"] move to workspace $ws4
 for_window [class="discord"] move to workspace $ws9 
 for_window [class="code"] move to workspace $ws3 
 for_window [class="Code"] move to workspace $ws3 

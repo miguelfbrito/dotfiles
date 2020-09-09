@@ -55,13 +55,13 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 7 
 
-font-0 = "Overpass:size=10:weight=400;1"
+font-0 = "Overpass:size=10:weight=300;0"
 font-1 = FontAwesome:style=Solid:size=10;0
 font-2 = "Font Awesome 5 Pro:style=Solid:size=10;2"
 
 modules-left = i3
-modules-center =
-modules-right = pulseaudio xbacklight battery date powermenu
+modules-center = date
+modules-right = pulseaudio xbacklight battery powermenu
 modules-format = 0
 ; memory cpu temperature
 
@@ -69,9 +69,8 @@ tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 
-
-;wm-restack = bspwm
-
+; Hide bar on fullscreen
+;wm-restack = i3 
 ;override-redirect = true
 
 ;scroll-up = bspwm-desknext
@@ -188,7 +187,8 @@ interval = 5
 date =
 date-alt = %d-%m-%Y
 
-time =   %H:%M  %d/%m
+; Clock icon 
+time =   %H:%M  %d/%m
 time-alt =   %H:%M
 
 format-prefix = 
