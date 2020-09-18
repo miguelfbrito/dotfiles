@@ -1,10 +1,10 @@
 # Dotfiles
 
-* **WM**: i3-gaps (rounded corners)
+* **WM**: [i3-gaps](https://github.com/miguelfbrito/dotfiles/blob/master/.config/i3/config) (rounded corners)
 * **OS**: Ubuntu 19.10
-* **Terminal**: urxvt
-* **Shell**: zsh + Oh My Zsh
-* **Bar**: polybar
-* **Launcher**: Rofi
-* **File Manager**: Ranger + Nautilus
-* **Notes**: Joplin
+* **Terminal**: [urxvt](https://github.com/miguelfbrito/dotfiles/blob/master/.Xresources)
+* **Shell**: [zsh](https://github.com/miguelfbrito/dotfiles/blob/master/.zshrc) + Oh My Zsh
+* **Bar**: [polybar](https://github.com/miguelfbrito/dotfiles/blob/master/.config/polybar/config)
+* **Launcher**: [Rofi](https://github.com/miguelfbrito/dotfiles/tree/master/.config/rofi)
+* **File Manager**: [Ranger](https://github.com/miguelfbrito/dotfiles/tree/master/.config/ranger) + Nautilus
+* **Notes**: [Joplin](https://github.com/miguelfbrito/dotfiles/tree/master/.config/joplin-desktop)
