@@ -43,6 +43,7 @@ exec --no-startup-id fluxgui
 exec --no-startup-id rescuetime
 exec --no-startup-id ./joplin/Joplin.AppImage
 exec --no-startup-id compton --config ~/.config/compton.conf
+exec --no-startup-id blueman-applet
 
 
 #exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome' 
@@ -185,7 +186,7 @@ bindsym $mod+a focus parent
 
 # define names for default workspaces for which we configure key bindings later on.
 # we use variables to avoid repeating the names in multiple places.
-# Icons       
+# Icons       
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
